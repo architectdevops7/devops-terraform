@@ -23,7 +23,7 @@ pipeline {
         }
   stage('Run docker container') {
      steps {
-       sh "docker run -d -p 80:80 architectdevops7/httpwebapp"
+       sh "docker run -d -p 3000:80 architectdevops7/httpwebapp"
         }
       }
     }
