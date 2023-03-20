@@ -12,19 +12,19 @@ pipeline {
                 sh 'docker build -t httpwebapp:latest .' 
           }
         }
-   stage('Docker push image'){
+  stage('Docker push image'){
           steps {
-              withCredentials([usernamePassword(credentialsId: 'docker-repo-creds', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+            withCredentials([usernamePassword(credentialsId: 'docker-repo-creds', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
         	    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
         	    sh 'docker tag httpwebapp architectdevops7/httpwebapp:latest'
                 sh 'docker push architectdevops7/httpwebapp:latest'
+                }
           }
         }
-   stage('Run docker container') {
+  stage('Run docker container') {
      steps {
-       sh "docker run -d -p 3000:80 architectdevops7/httpwebapp"
+       sh "docker run -d -p 80:80 architectdevops7/httpwebapp"
         }
       }
     }
 }
-   
