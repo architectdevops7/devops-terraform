@@ -32,11 +32,11 @@ resource "aws_security_group" "web_sg" {
 
 # EC2 Instance resource
 resource "aws_instance" "web_instance" {
-  ami           = "ami-0c94855ba95c71c99"  # Replace with your desired AMI ID
+  ami           = "ami-0ab193018f3e9351b"  # Replace with your desired AMI ID
   instance_type = "t2.micro"
 
-  security_group = [aws_security_group.web_sg.id]
-
+  # security_groups = [aws_security_group.web_sg.id]
+  vpc_security_group_ids = [aws_security_group.web_sg.id]
   tags = {
     Name = "web-instance"
   }
