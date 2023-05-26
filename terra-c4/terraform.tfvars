@@ -1,0 +1,14 @@
+vpc_cidr_block = "10.0.0.0/16"
+elb_name = "my-elb"
+availability_zones = ["us-west-1a"]
+lc_name = "my-lc"
+ami_id = "ami-051ed863837a0b1b6"
+instance_type = "t2.micro"
+user_data = "#!/bin/bash\necho 'Hello, World!' > index.html\npython -m SimpleHTTPServer 80"
+subnet_cidr_block = "10.0.0.0/24"
+availability_zone = "us-west-1a"
+target_group_name = "my-target-group"
+asg_name = "my-asg"
+min_size = 1
+max_size = 3
+desired_capacity = 2
