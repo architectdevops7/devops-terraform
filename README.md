@@ -1,5 +1,5 @@
 # terraform to install ec2 intances
-
+```
 provider "aws" {
   region = "us-east-1"  # Replace with your desired AWS region
 }
@@ -26,3 +26,4 @@ resource "aws_instance" "example" {
     Name = "Docker-EC2-Instance-${count.index + 1}"
   }
 }
+```
