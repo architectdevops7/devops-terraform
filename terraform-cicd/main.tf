@@ -16,11 +16,10 @@ resource "aws_instance" "example_instance" {
 # Configure the S3 backend for remote state storage
 terraform {
   backend "s3" {
-    bucket         = "your-bucket-name"
+    bucket         = "terraform-upgrad-s3"
     key            = "example.tfstate"
-    region         = "your-aws-region"
-    access_key     = "your-access-key"
-    secret_key     = "your-secret-key"
-    dynamodb_table = "your-dynamodb-table-name"
+    region         = "us-east-1"
+    access_key     = "AKIASSKB242XHSXIIM27"
+    secret_key     = "lG9xiIwjl6RoHaukra51MdVrtPA5wrZyhbEuEuLI"
   }
 }
