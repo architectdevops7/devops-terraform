@@ -1,3 +1,6 @@
+# terraform installation
+https://aws.plainenglish.io/install-terraform-on-aws-ec2-linux-step-by-step-detailed-bd1e7b4a12f3
+
 # terraform to install ec2 intances
 ```
 provider "aws" {
